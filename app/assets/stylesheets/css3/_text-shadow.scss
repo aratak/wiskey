@@ -1,0 +1,6 @@
+@mixin text-shadow($color: #aaa, $hoff: 0, $voff: 0, $blur: 1px) {
+  @if $color == none {
+    text-shadow: none; }
+  @else {
+    text-shadow: $color $hoff $voff $blur; }
+}

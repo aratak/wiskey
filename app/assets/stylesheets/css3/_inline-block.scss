@@ -1,0 +1,21 @@
+// Legacy support for inline-block in IE7 (maybe IE6)
+@mixin inline-block {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
+
+// remove spaces from inline-blocks. this is hack, in general. The better way - remove it from HTML
+@mixin inline-block-fix {
+  letter-spacing: -.25em;
+  word-spacing: -1em;
+
+  > * {
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+}
