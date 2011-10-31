@@ -1,20 +1,54 @@
 @mixin border-radius ($top-right, $top-left: false, $bottom-right: false, $bottom-left: false) {
-	@unless ($top-left) { $top-left: $top-right }
-	@unless ($bottom-right) { $bottom-right: $top-right }
-	@unless ($bottom-left) { $bottom-left: $top-left }
+  @if not $top-left { $top-left: $top-right }
+  @if not $bottom-right { $bottom-right: $top-right }
+  @if not $bottom-left { $bottom-left: $top-left }
 
-  border-top-left-radius: $top-left;
-  border-top-right-radius: $top-right;
-  border-bottom-right-radius: $bottom-right;
-  border-bottom-left-radius: $bottom-left;
+  @include border-top-left-radius($top-left);
+  @include border-top-right-radius($top-right);
+  @include border-bottom-left-radius($bottom-left);
+  @include border-bottom-right-radius($bottom-right);
+}
 
+@mixin border-top-left-radius($top-left) {
   -webkit-border-top-left-radius: $top-left;
-  -webkit-border-top-right-radius: $top-right;
-  -webkit-border-bottom-right-radius: $bottom-right;
-  -webkit-border-bottom-left-radius: $bottom-left;
-
   -moz-border-radius-topleft: $top-left;
+  border-top-left-radius: $top-left;
+}
+
+@mixin border-top-right-radius($top-right) {
+  -webkit-border-top-right-radius: $top-right;
   -moz-border-radius-topright: $top-right;
+  border-top-right-radius: $top-right;
+}
+
+@mixin border-bottom-left-radius($bottom-left) {
+  -webkit-border-bottom-left-radius: $bottom-left;
   -moz-border-radius-bottomleft: $bottom-left;
+  border-bottom-left-radius: $bottom-left;
+}
+
+@mixin border-bottom-right-radius($bottom-right) {
+  -webkit-border-bottom-right-radius: $bottom-right;
   -moz-border-radius-bottomright: $bottom-right;
+  border-bottom-right-radius: $bottom-right;
+}
+
+@mixin border-top-radius($top) {
+  @include border-top-left-radius($top);
+  @include border-top-right-radius($top);
+}
+
+@mixin border-bottom-radius($bottom) {
+  @include border-bottom-left-radius($bottom);
+  @include border-bottom-right-radius($bottom);
+}
+
+@mixin border-left-radius($left) {
+  @include border-top-left-radius($left);
+  @include border-bottom-right-radius($left);
+}
+
+@mixin border-right-radius($right) {
+  @include border-top-right-radius($right);
+  @include border-bottom-right-radius($right);
 }

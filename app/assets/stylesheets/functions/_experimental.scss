@@ -1,4 +1,4 @@
-@function experimental($property, $value,
+@mixin experimental($property, $value,
   $moz      : true,
   $webkit   : true,
   $o        : true,

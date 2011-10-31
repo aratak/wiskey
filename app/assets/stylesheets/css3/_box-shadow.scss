@@ -1,3 +1,3 @@
-@function box-shadow($params) {
+@mixin box-shadow($params) {
   @include experimental(box-shadow, $params, -moz, -webkit, -o, not -ms, not -khtml, official);
 }
