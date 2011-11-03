@@ -25,6 +25,15 @@
   background-image:        unquote("linear-gradient(#{$pos}, #{$full})");
 }
 
+@mixin gradient($pos, $G1, $G2: false,
+                $G3: false, $G4: false,
+                $G5: false, $G6: false,
+                $G7: false, $G8: false,
+                $G9: false, $G10: false) {
+  @include linear-gradient($pos, $G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10);
+}
+
+
 // Usage: Gradient position is optional, default is top. Position can be a degree. Color stops are optional as well.
 
 // @include linear-gradient(#1e5799, #2989d8);
