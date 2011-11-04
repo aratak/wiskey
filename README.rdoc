@@ -1,3 +1,31 @@
 = Wiskey
 
+Set of low level css features without any solid css.
+
+
+= Requirements
+
+Rails 3.1+ with sass and sass-rails gems
+
+= Installing
+
+For rails 3.1+ it's easy: just require gem in your ```Gemfile```
+
+For another framework (or without any framework) you should copy app/assets/stylesheets folder to your sass folder.
+
+= Usage
+
+Import wiskey at the beginning of application.css.scss
+
+  @import "wiskey";
+
+All requirements underneath wiskey will have the cool wiskey features.
+
+Sprockets provides some directives that are placed inside of comments called require, 
+require_tree, and require_self. DO NOT USE THEM IN YOUR SASS/SCSS FILES. They are very 
+primitive and do not work well with Sass files. Instead, use Sass's native @import directive 
+which sass-rails has customized to integrate with the conventions of your rails projects.
+
+= License
+
 This project rocks and uses MIT-LICENSE.
