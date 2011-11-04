@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem "rails", "3.1.0"
 gem 'sass'
+gem 'sass-rails'
 
 # gem "capybara", ">= 0.4.0"
 
