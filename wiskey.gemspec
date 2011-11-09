@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.authors                   = [ "Alexey Osipenko" ]
   s.email                     = [ "alexey@osipenko.in.ua" ]
-  s.homepage                  = "http://wiskey.github.com"
+  s.homepage                  = "http://aratak.github.com/wiskey/"
   s.description = "The rails 3 gem, which include SCSS mixins and default rails templates for true-cutupping."
   s.files = `git ls-files`.split("\n")
   s.version = "0.0.2"
