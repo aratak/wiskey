@@ -19,29 +19,32 @@
                         -moz, -webkit, -o, not -ms, not -khtml, official);
 }
 
-@mixin m-experimental($property, $value
+@mixin m-experimental($property, $value) {
+  @include experimental($property, $value,
                         -moz, not -webkit, not -o, not -ms, not -khtml, official);
 }
 
-@mixin o-experimental($property, $value
+@mixin o-experimental($property, $value) {
+  @include experimental($property, $value,
                         not -moz, not -webkit, -o, not -ms, not -khtml, official);
 }
 
-@mixin w-experimental($property, $value
+@mixin w-experimental($property, $value) {
+  @include experimental($property, $value,
                         not -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
-@mixin mw-experimental() {
+@mixin mw-experimental($property, $value) {
   @include experimental($property, $value,
                         -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
-@mixin mo-experimental() {
+@mixin mo-experimental($property, $value) {
   @include experimental($property, $value,
                         -moz, not -webkit, -o, not -ms, not -khtml, official);
 }
 
-@mixin wo-experimental() {
+@mixin wo-experimental($property, $value) {
   @include experimental($property, $value,
                         not -moz, -webkit, -o, not -ms, not -khtml, official);
 }
