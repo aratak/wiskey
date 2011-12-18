@@ -13,3 +13,37 @@
   @if $khtml    {  -khtml-#{$property} : $value; }
   @if $official {         #{$property} : $value; }
 }
+
+@mixin mwo-experimental($property, $value) {
+  @include experimental($property, $value,
+                        -moz, -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin m-experimental($property, $value
+                        -moz, not -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin o-experimental($property, $value
+                        not -moz, not -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin w-experimental($property, $value
+                        not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin mw-experimental() {
+  @include experimental($property, $value,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin mo-experimental() {
+  @include experimental($property, $value,
+                        -moz, not -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin wo-experimental() {
+  @include experimental($property, $value,
+                        not -moz, -webkit, -o, not -ms, not -khtml, official);
+}
+// @include experimental(property, value)
+// @include experimental(property, value, -moz, -webkit, not -o, not-ks, not -khtml, official)

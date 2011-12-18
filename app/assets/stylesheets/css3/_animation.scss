@@ -10,9 +10,8 @@
     $full:  compact($name-1, $name-2, $name-3, $name-4,
                     $name-5, $name-6, $name-7, $name-8, $name-9);
 
-  -webkit-animation-name: $full;
-     -moz-animation-name: $full;
-          animation-name: $full;
+  @include experimental(animation-name, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -25,9 +24,8 @@
     $full:  compact($time-1, $time-2, $time-3, $time-4,
                     $time-5, $time-6, $time-7, $time-8, $time-9);
 
-  -webkit-animation-duration: $full;
-     -moz-animation-duration: $full;
-          animation-duration: $full;
+  @include experimental(animation-duration, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -41,9 +39,8 @@
     $full:  compact($motion-1, $motion-2, $motion-3, $motion-4,
                     $motion-5, $motion-6, $motion-7, $motion-8, $motion-9);
 
-  -webkit-animation-timing-function: $full;
-     -moz-animation-timing-function: $full;
-          animation-timing-function: $full;
+  @include experimental(animation-timing-function, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -57,9 +54,8 @@
     $full:  compact($value-1, $value-2, $value-3, $value-4,
                     $value-5, $value-6, $value-7, $value-8, $value-9);
 
-  -webkit-animation-iteration-count: $full;
-     -moz-animation-iteration-count: $full;
-          animation-iteration-count: $full;
+  @include experimental(animation-iteration-count, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -76,6 +72,8 @@
   -webkit-animation-direction: $full;
      -moz-animation-direction: $full;
           animation-direction: $full;
+  @include experimental(animation-direction, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -89,9 +87,8 @@
     $full:  compact($state-1, $state-2, $state-3, $state-4,
                     $state-5, $state-6, $state-7, $state-8, $state-9);
 
-  -webkit-animation-play-state: $full;
-     -moz-animation-play-state: $full;
-          animation-play-state: $full;
+  @include experimental(animation-play-state, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -104,9 +101,8 @@
     $full:  compact($time-1, $time-2, $time-3, $time-4,
                     $time-5, $time-6, $time-7, $time-8, $time-9);
 
-  -webkit-animation-delay: $full;
-     -moz-animation-delay: $full;
-          animation-delay: $full;
+  @include experimental(animation-delay, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -121,9 +117,8 @@
     $full:  compact($mode-1, $mode-2, $mode-3, $mode-4,
                     $mode-5, $mode-6, $mode-7, $mode-8, $mode-9);
 
-  -webkit-animation-fill-mode: $full;
-     -moz-animation-fill-mode: $full;
-          animation-fill-mode: $full;
+  @include experimental(animation-fill-mode, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
 
 
@@ -155,7 +150,7 @@
 
 // Official animation shorthand property. Needs more work to actually be useful.
 @mixin animation ($name, $duration, $timing-function, $delay, $iteration-count, $direction) {
-  -webkit-animation: $name $duration $timing-function $delay $iteration-count $direction;
-     -moz-animation: $name $duration $timing-function $delay $iteration-count $direction;
-          animation: $name $duration $timing-function $delay $iteration-count $direction;
+  $full: $name $duration $timing-function $delay $iteration-count $direction;
+  @include experimental(animation, $full,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
 }
