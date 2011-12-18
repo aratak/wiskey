@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage                  = "http://aratak.github.com/wiskey/"
   s.description = "The rails 3 gem, which include SCSS mixins and default rails templates for true-cutupping."
   s.files = `git ls-files`.split("\n")
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.add_dependency "rails"         , "~> 3.1.0"
 
