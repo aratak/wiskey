@@ -26,15 +26,12 @@
 
 // start|end|center|baseline|stretch
 @mixin box-align($align: stretch) {
-  @include mw-experimentalbox-align, $align);
+  @include mw-experimental(box-align, $align);
 }
 
 // normal|reverse|inherit
 @mixin box-direction($direction: normal) {
-  -webkit-: ;
-     -moz-box-direction: $direction;
-          box-direction: $direction;
-  @include mw-experimental(box-orient, $direction);
+  @include mw-experimental(box-direction, $direction);
 }
 
 // single|multiple
