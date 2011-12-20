@@ -1,3 +1,5 @@
+$:.push File.expand_path("../lib", __FILE__)
+require "wiskey/version"
 # Provide a simple gemspec so you can easily use your enginex
 # project in your rails apps through git.
 Gem::Specification.new do |s|
@@ -9,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage                  = "http://aratak.github.com/wiskey/"
   s.description = "The rails 3 gem, which include SCSS mixins and default rails templates for true-cutupping."
   s.files = `git ls-files`.split("\n")
-  s.version = "0.0.4"
+  s.version = Wiskey::VERSION
 
   s.add_dependency "rails"         , "~> 3.1.0"
 
