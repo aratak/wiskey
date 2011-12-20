@@ -10,9 +10,10 @@ Gem::Specification.new do |s|
   s.email                     = [ "alexey@osipenko.in.ua" ]
   s.homepage                  = "http://aratak.github.com/wiskey/"
   s.description = "The rails 3 gem, which include SCSS mixins and default rails templates for true-cutupping."
-  s.files = `git ls-files`.split("\n")
   s.version = Wiskey::VERSION
 
   s.add_dependency "rails"         , "~> 3.1.0"
+  s.files      = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 
 end
