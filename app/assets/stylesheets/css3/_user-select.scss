@@ -1,0 +1,10 @@
+@mixin user-select($value) {
+  // auto | none | text
+  @include experimental(user-select, $value,
+                        -moz, -webkit, -o, not -ms, not -khtml, official);
+}
+
+//  Usage: Gradient position and shape-size are required. Color stops are optional.
+//  @include user-select(none);
+//  @include user-select(text);
+//  @include user-select(all);
