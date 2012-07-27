@@ -1,3 +1,5 @@
+require "wiskey/generator"
+
 module Wiskey
   if defined?(Rails)
     class Engine < ::Rails::Engine
