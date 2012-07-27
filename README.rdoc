@@ -28,6 +28,48 @@ require_tree, and require_self. DO NOT USE THEM IN YOUR SASS/SCSS FILES. They ar
 primitive and do not work well with Sass files. Instead, use Sass's native @import directive
 which sass-rails has customized to integrate with the conventions of your rails projects.
 
+
+= Rails 2.3 or a non-Rails project (static site, jekyll, wordpress, etc...)
+Wiskey includes an easy way to generate a directory with all the necessary files.
+Install the wiskey gem:
+
+    gem install wiskey
+
+Change the directory to where you want to generate the wiskey folder and files:
+
+    cd project_name/stylesheets/sass/
+
+Install wiskey:
+
+    bundle exec wiskey install
+
+This will generate a folder called `wiskey` containing all the mixins and other necessary wiskey files. It is recommended not to add or modify the files so that you can update it easily.
+
+Update an existing installation with:
+
+    bundle exec wiskey update
+
+This will delete the 'wiskey' directory and regenerate it.
+
+*Sass Watch:* To output properly, Wiskey must be explicitly required (`-r`) by Sass at the command line:
+
+    # Example (project root directory)
+    sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/wiskey/lib/wiskey.rb
+
+For the Jekyll just add requirement into 'sass_converter.rb'
+
+    require 'wiskey'
+
+
+You will need to import the mixins at the beginning of your stylesheet(s):
+
+    @import 'wiskey/wiskey';
+
+= Thanks
+
+For Thoughtbots and theys bourbon gem.
+
+
 = License
 
 This project rocks and uses MIT-LICENSE.
