@@ -2,7 +2,7 @@
 module Wiskey::SassExtensions::Functions::ColorNumber
 
   def color_number(color)
-    Sass::Script::List.new ie_hex_str(color).gsub(/^#/, '')
+    Sass::Script::String.new ie_hex_str(color).to_s.gsub(/^#/, '')
   end
 
 end
