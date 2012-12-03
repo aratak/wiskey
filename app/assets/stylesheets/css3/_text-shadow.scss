@@ -8,5 +8,5 @@
     $blur: nth(split_params($params), 4);
 
     text-shadow: $color $hoff $voff $blur;
-    filter: progid:DXImageTransform.Microsoft.DropShadow(offX=mr-remove-unit($hoff),offY=mr-remove-unit($voff),color=color_number($color)); }
+    filter: progid:DXImageTransform.Microsoft.DropShadow(offX=#{remove_unit($hoff)}, offY=#{remove_unit($voff)}, color=#{color_number($color)}); }
 }
