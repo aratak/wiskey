@@ -1,12 +1,3 @@
-@mixin text-shadow($params) {
-  @if $params == none {
-    text-shadow: none; }
-  @else {
-    $color: nth(split_params($params), 1);
-    $hoff: nth(split_params($params), 2);
-    $voff: nth(split_params($params), 3);
-    $blur: nth(split_params($params), 4);
-
-    text-shadow: $color $hoff $voff $blur;
-    filter: progid:DXImageTransform.Microsoft.DropShadow(offX=#{remove_unit($hoff)}, offY=#{remove_unit($voff)}, color=#{color_number($color)}); }
+@mixin text-shadow($shadows...) {
+  text-shadow: $shadows;
 }
