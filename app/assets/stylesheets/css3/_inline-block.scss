@@ -12,8 +12,14 @@
 // remove spaces from inline-blocks. this is hack, in general. The better way - remove it from HTML
 @mixin inline-block-fix {
   letter-spacing: -.25em;
+  word-spacing: -1em;
 
   > * {
     letter-spacing: normal;
+    word-spacing: normal;
+  }
+
+  .webkit & {
+    word-spacing: normal;
   }
 }
