@@ -67,7 +67,7 @@ You will need to import the mixins at the beginning of your stylesheet(s):
 
 = Thanks
 
-For Thoughtbots and theys bourbon gem.
+For Thoughtbots and their bourbon gem.
 
 
 = License
