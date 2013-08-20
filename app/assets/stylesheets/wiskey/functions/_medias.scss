@@ -1,0 +1,38 @@
+//
+// $media
+//    handhelds
+//    wide-handhelds
+//    tablets
+//    small-screens
+//    wide-screens
+//
+
+$media-handhelds: 480px !default;
+$media-wide-handhelds: 699px !default;
+$media-tablets: 960px !default;
+$media-small-screens: 1200px !default;
+// $media-wide-screens:  !default;
+
+@mixin respond-to($medias...) {
+  @each $media in $medias {
+
+    @if $media == handhelds {
+      @media only screen and (max-width: $media-handhelds) { @content; }
+    }
+    @else if $media == wide-handhelds {
+      @media only screen and (min-width: 480px) and (max-width: $media-wide-handhelds) { @content; }
+    }
+    @else if $media == tablets {
+      @media only screen and (min-width: 700px) and (max-width: $media-tablets) { @content; }
+    }
+
+    @else if $media == small-screens {
+      @media only screen and (min-width: 960px) and (max-width: $media-small-screens) { @content; }
+    }
+
+    @else if $media == wide-screens {
+      @media only screen and (min-width: 1200px) { @content; }
+    }
+
+  }
+}

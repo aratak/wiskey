@@ -1,0 +1,52 @@
+@mixin experimental($property, $value,
+  $moz      : true,
+  $webkit   : true,
+  $o        : true,
+  $ms       : true,
+  $khtml    : true,
+  $official : true
+) {
+  @if $moz      {    -moz-#{$property} : $value; }
+  @if $webkit   { -webkit-#{$property} : $value; }
+  @if $o        {      -o-#{$property} : $value; }
+  @if $ms       {     -ms-#{$property} : $value; }
+  @if $khtml    {  -khtml-#{$property} : $value; }
+  @if $official {         #{$property} : $value; }
+}
+
+@mixin mwo-experimental($property, $value) {
+  @include experimental($property, $value,
+                        -moz, -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin m-experimental($property, $value) {
+  @include experimental($property, $value,
+                        -moz, not -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin o-experimental($property, $value) {
+  @include experimental($property, $value,
+                        not -moz, not -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin w-experimental($property, $value) {
+  @include experimental($property, $value,
+                        not -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin mw-experimental($property, $value) {
+  @include experimental($property, $value,
+                        -moz, -webkit, not -o, not -ms, not -khtml, official);
+}
+
+@mixin mo-experimental($property, $value) {
+  @include experimental($property, $value,
+                        -moz, not -webkit, -o, not -ms, not -khtml, official);
+}
+
+@mixin wo-experimental($property, $value) {
+  @include experimental($property, $value,
+                        not -moz, -webkit, -o, not -ms, not -khtml, official);
+}
+// @include experimental(property, value)
+// @include experimental(property, value, -moz, -webkit, not -o, not-ks, not -khtml, official)

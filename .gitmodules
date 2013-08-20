@@ -1,3 +1,0 @@
-[submodule "app/assets/stylesheets"]
-	path = app/assets/stylesheets
-	url = git@github.com:it-vecherka/wiskey.git

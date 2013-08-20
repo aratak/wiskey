@@ -1,0 +1,4 @@
+@mixin text-overflow {
+  overflow: hidden;
+  @include o-experimental(text-overflow, ellipsis);
+}
